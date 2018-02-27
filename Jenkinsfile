@@ -24,7 +24,9 @@ pipeline {
 		}
 		
 		stage('analysis') {
-			agent ubuntu
+			agent {
+				label 'ubuntu'
+			}
 			steps {
 				script {
 					SCANNER_HOME = tool 'sonarscanner';	
