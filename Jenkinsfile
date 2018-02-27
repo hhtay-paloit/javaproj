@@ -12,9 +12,12 @@ pipeline {
 	stages {
     	
 		stage ('build') {	          
-			agent any
-				steps {	    
-					sh 'mvn verify'
+			agent {
+				label 'ubuntu'
+			}
+			steps {	    
+				sh 'mvn verify'
+				junit 'surefire-reports/TEST-hhtay.AppTest.xml'
 			}
 			post {
 				always {
