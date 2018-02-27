@@ -17,7 +17,7 @@ pipeline {
 			}
 			steps {	    
 				sh 'mvn verify'
-				junit 'surefire-reports/TEST-hhtay.AppTest.xml'
+				junit 'target/surefire-reports/TEST-hhtay.AppTest.xml'
 			}
 			post {
 				always {
